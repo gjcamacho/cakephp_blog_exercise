@@ -3,6 +3,7 @@
 </div>
 <div>
 	<?php 
+	debug($user);
 		if(isset($user)){
 			?>
 			<dl>
