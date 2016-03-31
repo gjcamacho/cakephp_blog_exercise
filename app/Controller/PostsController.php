@@ -14,7 +14,7 @@ class PostsController extends AppController {
 			$post=$this->Post->find('first',
 					array("conditions"=>array("Post.id"=>$id)));
 			
-			debug($post);
+			
 			$this->set("post", $post);
 		}
 	}
