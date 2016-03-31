@@ -21,6 +21,11 @@ class UsersController extends AppController {
 	public function add(){
 		if($this->request->is('post')){
 			debug($this->request->data);
+			
+			$this->User->create();
+			$this->User->save($this->request->data);
+			
+			$this->redirect("/users/index");
 		}
 	}
 }
