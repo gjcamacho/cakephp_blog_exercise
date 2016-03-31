@@ -12,6 +12,9 @@ class UsersController extends AppController {
 	public function view($id=null){
 		if($id!=null){
 			$this->User->recursive=-1;
+			$this->User->Behaviors->load('Containable');
+			$this->User->contain(array('Post'));
+			
 			$user=$this->User->find('first',
 					array("conditions"=>array("User.id"=>$id)));
 			
