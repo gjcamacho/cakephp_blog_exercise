@@ -20,9 +20,6 @@ class UsersController extends AppController {
 			
 			$this->set("user", $user);
 			
-			$this->layout=null;
-			
-			$this->render('json');
 		}
 	}
 	
@@ -34,6 +31,17 @@ class UsersController extends AppController {
 			$this->User->save($this->request->data);
 			
 			$this->redirect("/users/index");
+		}
+	}
+	
+	public function login(){
+		if($this->request->is('post')){
+			$username=$this->request->data["User"]["username"];
+			$password=$this->request->data["User"]["password"];
+			
+			$user=$this->User->findByUsernameAndPassword($username,$password);
+			
+			debug($user);
 		}
 	}
 }
