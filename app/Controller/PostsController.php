@@ -6,6 +6,14 @@ class PostsController extends AppController {
 
 	public function index() {
 		$this->set('posts', $this->Post->find('all'));
+		
+	}
+	
+	public function view($id=null){
+		if($id!=null){
+			$this->set("post", $this->Post->find('first',
+					array("conditions"=>array("Post.id"=>$id))));
+		}
 	}
 }
 
