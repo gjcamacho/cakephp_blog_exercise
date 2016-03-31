@@ -47,7 +47,7 @@ class UsersController extends AppController {
 				$this->redirect("/posts/index");
 			}
 			else{
-				$this->Session->flash("Usuario incorrecto");
+				
 			}
 			
 		}

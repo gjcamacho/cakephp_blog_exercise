@@ -31,4 +31,13 @@ App::uses('Controller', 'Controller');
  * @link		http://book.cakephp.org/2.0/en/controllers.html#the-app-controller
  */
 class AppController extends Controller {
+	public function beforeSave(){
+		$user=$this->Session->read("User");
+		
+		if($this->request->params["controller"]!="users" && $this->request->params["action"]!="login"){
+			if($user==null){
+				$this->redirect("/users/login");
+			}
+		}
+	}
 }
