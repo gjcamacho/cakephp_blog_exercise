@@ -41,7 +41,15 @@ class UsersController extends AppController {
 			
 			$user=$this->User->findByUsernameAndPassword($username,$password);
 			
-			debug($user);
+			if(!empty($user)){
+				$this->Session->write("User", $user["User"]);
+				
+				$this->redirect("/posts/index");
+			}
+			else{
+				$this->Session->flash("Usuario incorrecto");
+			}
+			
 		}
 	}
 }
