@@ -11,6 +11,7 @@ class UsersController extends AppController {
 	
 	public function view($id=null){
 		if($id!=null){
+			$this->User->recursive=-1;
 			$user=$this->User->find('first',
 					array("conditions"=>array("User.id"=>$id)));
 			
