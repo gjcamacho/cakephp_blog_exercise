@@ -11,4 +11,5 @@ App::uses('AppModel', 'Model');
  * @package       app.Model
  */
 class Post extends Model {
+	public $belongsTo = 'User';
 }

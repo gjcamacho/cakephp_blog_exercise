@@ -11,4 +11,11 @@ App::uses('AppModel', 'Model');
  * @package       app.Model
  */
 class User extends Model {
+	public $hasMany = array(
+			'Post' => array(
+					'className' => 'Post',
+					'conditions' => array(),
+					'order' => ''
+			)
+	);
 }
