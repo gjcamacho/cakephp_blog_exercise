@@ -11,8 +11,11 @@ class PostsController extends AppController {
 	
 	public function view($id=null){
 		if($id!=null){
-			$this->set("post", $this->Post->find('first',
-					array("conditions"=>array("Post.id"=>$id))));
+			$post=$this->Post->find('first',
+					array("conditions"=>array("Post.id"=>$id)));
+			
+			debug($post);
+			$this->set("post", $post);
 		}
 	}
 }
