@@ -19,6 +19,10 @@ class UsersController extends AppController {
 					array("conditions"=>array("User.id"=>$id)));
 			
 			$this->set("user", $user);
+			
+			$this->layout=null;
+			
+			$this->render('json');
 		}
 	}
 	
