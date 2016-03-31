@@ -3,6 +3,7 @@
 </div>
 <div>
 	<?php 
+		debug($post);
 		if(isset($post)){
 			?>
 			<dl>
