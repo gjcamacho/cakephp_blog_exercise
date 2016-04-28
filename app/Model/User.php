@@ -31,7 +31,7 @@ class User extends Model {
 				)
 		);
 		
-		$options["conditions"]=array("User.user_id"=>$user_id);
+		$options["conditions"]=array("Post.user_id"=>$user_id);
 		$options["fields"]=array("User.*, Post.*");
 		
 		$this->recursive=-1;
