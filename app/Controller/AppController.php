@@ -42,4 +42,9 @@ class AppController extends Controller {
 			}
 		}
 	}
+	
+	public function afterFilter(){
+		debug($this->request->params["controller"]);
+		
+	}
 }
