@@ -35,6 +35,7 @@ class AppController extends Controller {
 		$user=$this->Session->read("User");
 		
 		debug($this->request->params["controller"]);
+		debug($this->request->params["action"]);
 		
 		if($this->request->params["controller"]!="users" && $this->request->params["action"]!="login"){
 			if($user==null){
@@ -45,6 +46,12 @@ class AppController extends Controller {
 	
 	public function afterFilter(){
 		debug($this->request->params["controller"]);
+		debug($this->request->params["action"]);
 		
+	}
+	
+	public function appError($error) {
+		// custom logic goes here.
+		debug("appError code!");
 	}
 }
