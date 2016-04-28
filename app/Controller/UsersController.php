@@ -57,7 +57,6 @@ class UsersController extends AppController {
 		
 		if($user_id!=null){
 			$posts=$this->User->getUserPosts($user_id);
-			debug($posts);
 			
 			$this->set('posts', $posts);
 			$this->set('user_id', $user_id);
