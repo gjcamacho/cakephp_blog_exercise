@@ -52,6 +52,14 @@ class UsersController extends AppController {
 			
 		}
 	}
+	
+	public function getPosts($user_id=null){
+		
+		if($user_id!=null){
+			$posts=$this->User->getUserPosts($user_id);
+			debug($posts);
+		}
+	}
 }
 
 ?>

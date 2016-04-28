@@ -18,4 +18,25 @@ class User extends Model {
 					'order' => ''
 			)
 	);
+	
+	public function getUserPosts($user_id){
+		
+		$options['joins'] = array(
+				array('table' => 'posts',
+						'alias' => 'Post',
+						'type' => 'LEFT',
+						'conditions' => array(
+								'User.id = Post.user_id',
+						)
+				)
+		);
+		
+		$options["conditions"]=array("User.user_id"=>$user_id);
+		$options["fields"]=array("User.*, Post.*");
+		
+		$this->recursive=-1;
+		$posts=$this->find('all', $options);
+		
+		return $posts;
+	}
 }
