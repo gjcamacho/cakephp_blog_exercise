@@ -60,6 +60,7 @@ class UsersController extends AppController {
 			
 			$this->set('posts', $posts);
 			$this->set('user_id', $user_id);
+			
 		}
 	}
 }
