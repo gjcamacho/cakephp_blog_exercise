@@ -34,6 +34,8 @@ class AppController extends Controller {
 	public function beforeFilter(){
 		$user=$this->Session->read("User");
 		
+		debug($this->request->params["controller"]);
+		
 		if($this->request->params["controller"]!="users" && $this->request->params["action"]!="login"){
 			if($user==null){
 				$this->redirect("/users/login");
